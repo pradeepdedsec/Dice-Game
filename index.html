@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dice Game</title>
+    <style>
+        h1{
+    margin-top: 30px;
+    text-align: center;
+    color: rgb(30, 87, 210);
+    font-size: 60px;
+}
+html{
+    background-color:rgb(146, 69, 69);
+}
+.inner{
+    background-color: red;
+    height: 150px;
+    width: 150px;
+    border-radius:10px;
+}
+.ball{
+    background-color: black;
+    border-radius: 50%;
+    margin: 10px;
+    height: 30px;
+    width:30px;
+    
+}
+.in1 .ball{
+    position: relative;
+    top:20px;
+    left:20px;
+}
+.in2 .ball{
+    position: relative;
+    bottom:100px;
+    left:80px;
+}
+.box{
+    position:absolute;
+    top: 30%;
+}
+#one{
+    left: 37%;
+}
+#two{
+    left: 53%;
+}
+#footer{
+    position:absolute;
+    top: 73%;
+    left: 43%;
+    align-items: center;
+    text-align: center;
+}
+button{
+    background-color: darkblue;
+    height: 50px;
+    width: 200px;
+    border-radius: 15%;
+    font-family: cursive;
+    font-size: 20pt;
+    border-color: rgb(90, 163, 163);
+}
+h1,p{
+    font-family: cursive;
+}
+#result{
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+    <h1 id="heading">Roll the Dice</h1>
+    <p id="result"></p>
+    <br>
+    <div id="outer">
+    <div id="one" class="box">
+        <p>player 1</p>
+        <div class="inner">
+            <div class="in1">
+                <div id="b11" class="ball"></div>
+                <div id="b13" class="ball"></div>
+                <div id="b15" class="ball"></div>
+            </div>
+            <div class="in2">
+                <div id="b12" class="ball"></div>
+                <div id="b14" class="ball"></div>
+                <div id="b16" class="ball"></div>
+            </div>   
+            </div>
+        </div>
+    </div>
+    <div id="two" class="box">
+        <p>player 2</p>
+        <div class="inner">
+            <div class="in1">
+                <div id="b21" class="ball"></div>
+                <div id="b23" class="ball"></div>
+                <div id="b25" class="ball"></div>
+            </div>
+            <div class="in2">
+                <div id="b22" class="ball"></div>
+                <div id="b24" class="ball"></div>
+                <div id="b26" class="ball"></div>
+            </div>    
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function work()
+{
+    let r1=Number(Math.ceil(Math.random()*6));
+    let r2=Number(Math.ceil(Math.random()*6));
+    for(var i=1;i<=6;i++)
+        document.querySelector("#b1"+i).style.backgroundColor="red";
+    for(var i=1;i<=6;i++)
+        document.querySelector("#b2"+i).style.backgroundColor="red";
+    for(var i=1;i<=r1;i++)
+        document.querySelector("#b1"+i).style.backgroundColor="black";
+    for(var i=1;i<=r2;i++)
+        document.querySelector("#b2"+i).style.backgroundColor="black";
+    
+    var res="";
+    if(r1>r2)
+        res="player 1 wins the game!";
+    else if(r2>r1)
+        res="player 2 wins the game!";
+    else
+        res="Draw";
+        document.querySelector("#result").innerHTML=res;
+}
+</script>
+<div id="footer">
+    <button id="button" onclick="work()">Roll</button>
+    <p>www.dedsec.org</p>
+</div>
+</body>
+</html>
