@@ -22,6 +22,9 @@ html{
     height: 30px;
     width:30px;  
 }
+#b1center,#b2center{
+    background-color:#d63e3e;
+}
 .in1 .ball{
     position: relative;
     top:20px;
