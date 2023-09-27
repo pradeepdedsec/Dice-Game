@@ -64,6 +64,7 @@ h1,p{
 }
 #result{
     text-align: center;
+    font-size: 20pt;
 }
 #b1center,#b2center{
     position:absolute;
